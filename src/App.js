@@ -1,13 +1,11 @@
-import { BrowserRouter as Router, Routes, Route, Link  } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './components/pages/Home/Home'
-import Curriculos from './components/pages/Curriculos/Curriculos'
-import Company from './components/pages/Company/Company'
-import Contact from './components/pages/Contact/Contact'
-import NewCur from './components/pages/NewCur/NewCur'
-import Curriculo from './components/pages/Curriculo/Curriculo'
 import Container from './components/layout/Container/Container'
 import Navbar from './components/layout/Navbar/Navbar'
 import Footer from './components/layout/Footer/Footer'
+import Register from './components/pages/Register/Register'
+import Login from './components/pages/Login/Login'
+
 
 function App() {
   return (
@@ -16,11 +14,8 @@ function App() {
       <Container customClass="min-height">
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/curriculos" element={<Curriculos/>}/>
-          <Route path="/company" element={<Company/>}/>   
-          <Route path="/contact" element={<Contact/>}/>      
-          <Route path="/newCur" element={<NewCur/>}/>
-          <Route path="/curriculo/:id" element={<Curriculo/>}/>
+          <Route path="/Register" element={<Register/>}/>
+          <Route path="/Login" element={<Login/>}/>   
         </Routes>
     </Container>
     <Footer/>

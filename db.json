@@ -1,0 +1,21 @@
+{
+  "curriculos":[],
+  "nivel": [
+  {
+      "id": 1,
+      "experiencia": "Estágio"
+  },
+  {
+      "id": 2,
+      "experiencia": "Junior"
+  },
+  {
+      "id": 3,
+      "experiencia": "Pleno"
+  },
+  {
+      "id": 4,
+      "experiencia": "Senior"
+  }
+  ]
+}

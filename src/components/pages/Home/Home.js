@@ -1,4 +1,9 @@
+import styles from './Home.module.css'
+
 function Home(){
-    return <h1>Home</h1>
+    return (
+    <section className={styles.home_container}>
+      Bom dia
+    </section>)
 }
 export default Home
