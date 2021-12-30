@@ -1,10 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
+//import { useHistory } from 'react-router-dom'
 
 function Register() {
+    //const history = useHistory()
+    const navigate = useNavigate();
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) {
+      navigate("/logado");
+    }
+  }, [navigate]);
+
+
+
   async function registerUser(event){
     event.preventDefault()
     const response = await fetch('http://localhost:1337/api/register', {
@@ -20,7 +32,10 @@ function Register() {
     })
 
     const data = await response.json()
-    console.log(data)
+   if(data.status === 'ok') {
+    navigate("/login")
+     //history.push('/login')
+    }
   }
   return (
     <div>

@@ -5,6 +5,7 @@ import Navbar from './components/layout/Navbar/Navbar'
 import Footer from './components/layout/Footer/Footer'
 import Register from './components/pages/Register/Register'
 import Login from './components/pages/Login/Login'
+import Logado from './components/pages/Logado/Logado'
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/Register" element={<Register/>}/>
-          <Route path="/Login" element={<Login/>}/>   
+          <Route path="/Login" element={<Login/>}/>  
+          <Route path="/Logado" element={<Logado/>}/>   
         </Routes>
     </Container>
     <Footer/>

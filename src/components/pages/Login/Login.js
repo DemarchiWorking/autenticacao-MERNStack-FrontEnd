@@ -1,9 +1,19 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate();
   
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) {
+      navigate("/logado");
+    }
+  }, [navigate]);
+
+
   async function loginUser(event){
     event.preventDefault()
     const response = await fetch('http://localhost:1337/api/login', {
@@ -18,6 +28,14 @@ function Login() {
     })
 
     const data = await response.json()
+
+    if(data.user) {
+        localStorage.setItem('token', data.user)
+        alert('Logado com sucesso!')
+        window.location.href = '/logado'
+    }else {
+        alert('Login ou senha inválidos!')
+    }
     console.log(data)
   }
   return (
@@ -36,7 +54,7 @@ function Login() {
           type="password"
           placeholder="Password"/><br/>
 
-          <input type="submit" value="Registrar"/>
+          <input type="submit" value="Login"/>
 
     
       </form>
